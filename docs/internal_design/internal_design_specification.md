@@ -15,8 +15,12 @@
 - Spring Boot 3.x
 - Spring Data JPA
 - H2 Database (In-Memory for simplicity, can be changed to MySQL/PostgreSQL)
-- RestTemplate (for openbd API)
+- RestTemplate (for openbd API, configured with proxy support)
 - Thymeleaf
 
-## 4. バリデーション実装
+## 4. プロキシ設定
+- プロキシ環境下での外部API連携に対応するため、`RestTemplateConfig` で `RestTemplate` を Bean として定義。
+- `application.properties` の `proxy.*` プロパティで有効無効および接続先を制御可能。
+
+## 5. バリデーション実装
 - Spring Validation (`@NotBlank`, `@Pattern` など) を Form クラスに使用する。
