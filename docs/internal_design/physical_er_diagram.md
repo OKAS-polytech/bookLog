@@ -9,10 +9,6 @@ erDiagram
         varchar(255) publisher
         varchar(20) published_date
         varchar(500) cover_url
-    }
-    reading_records {
-        bigint id PK "AUTO_INCREMENT"
-        varchar(13) isbn FK
         date start_date
         date end_date
     }

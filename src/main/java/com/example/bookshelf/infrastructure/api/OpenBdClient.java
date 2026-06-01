@@ -3,15 +3,17 @@ package com.example.bookshelf.infrastructure.api;
 import com.example.bookshelf.domain.model.Book;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
 @Component
+@RequiredArgsConstructor
 public class OpenBdClient implements ExternalBookApi {
     private static final String API_URL = "https://api.openbd.jp/v1/get?isbn=";
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
     @Override
     public Optional<Book> fetchByIsbn(String isbn) {
